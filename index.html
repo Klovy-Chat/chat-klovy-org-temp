@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://klovy.org/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://klovy.org/favicon.ico" type="image/x-icon">
     <title>Funkcja niedostępna</title>
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
-            background: linear-gradient(135deg, #04e723 0%, #028a0d 100%);
+            background: linear-gradient(135deg, #7619f0 0%, #5602c4 100%);
             min-height: 100vh;
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -25,7 +28,7 @@
             max-width: 350px;
         }
         .box h1 {
-            color: #12a704;
+            color: #5602c4;
             font-size: 2rem;
             margin-bottom: 16px;
         }
@@ -37,20 +40,50 @@
         .box .icon {
             font-size: 3rem;
             margin-bottom: 16px;
-            color: #09ff00;
+            color: #5602c4;
+        }
+        /* Google Translate Styling (Optional - hide branding, etc.) */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-logo-link, .goog-te-gadget span {
+            display: none !important;
+        }
+        #google_translate_element {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
         }
     </style>
 </head>
 <body>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
+
     <div class="box" data-aos="zoom-in" data-aos-duration="900">
         <div class="icon" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="800">🚫</div>
         <h1 data-aos="fade-up" data-aos-delay="1400">Funkcja niedostępna</h1>
-        <p data-aos="fade-up" data-aos-delay="1600">Przepraszamy, ta funkcja jest obecnie niedostępna.<br>Spróbuj ponownie później.</p>
+        <p data-aos="fade-up" data-aos-delay="1600">
+            Przepraszamy, ta funkcja jest obecnie niedostępna.<br>Spróbuj ponownie później.
+        </p>
     </div>
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pl',
+                includedLanguages: 'en,pl',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-      AOS.init();
+        AOS.init();
     </script>
 </body>
 </html>
